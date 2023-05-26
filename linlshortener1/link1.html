@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Link Shortener</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    .form-container {
+      max-width: 400px;
+      margin: 0 auto;
+      background-color: #f2f2f2;
+      padding: 20px;
+      border-radius: 5px;
+    }
+    
+    .form-container label {
+      display: block;
+      margin-bottom: 10px;
+    }
+    
+    .form-container input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+    }
+    
+    .form-container input[type="submit"] {
+      width: 100%;
+      padding: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 3px;
+      cursor: pointer;
+    }
+    
+    .shortened-link {
+      margin-top: 20px;
+    }
+    
+    .shortened-link input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 3px;
+      background-color: #f9f9f9;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <h1>Link Shortener</h1>
+  <div class="form-container">
+    <form id="link-form">
+      <label for="original-link">Original Link</label>
+      <input type="text" id="original-link" placeholder="Enter your long URL..." required>
+      <input type="submit" value="Shorten">
+    </form>
+    <div class="shortened-link" id="shortened-link" style="display: none;">
+      <label for="short-link">Shortened Link</label>
+      <input type="text" id="short-link" readonly>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("link-form").addEventListener("submit", function(e) {
+      e.preventDefault();
+      var originalLink = document.getElementById("original-link").value;
+      // Implement your logic to shorten the link here
+      // For example, you can use an API or generate a shortened URL algorithmically
+      // Once you have the shortened link, update the "short-link" input field
+      var shortLink = "https://your-shortened-link.com";
+      document.getElementById("short-link").value = shortLink;
+      document.getElementById("shortened-link").style.display = "block";
+    });
+  </script>
+</body>
+</html>
